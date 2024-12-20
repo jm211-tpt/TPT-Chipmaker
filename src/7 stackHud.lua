@@ -37,9 +37,15 @@ end
 function MaticzplChipmaker.DrawCursorDisplay()
     cMaker.StackEdit.selected = -1
     local x,y = simulation.adjustCoords(cMaker.CursorPos.x,cMaker.CursorPos.y)
-    
+    auto r = pmap[y][x];
+	if (!r) then
+		r= sim->photons[y][x]
+	if (!r) then
+		return
+	end
+	
     local partsOnCursor = cMaker.GetAllPartsInPos(x,y)
-
+	
     if #partsOnCursor < 1 then
         return
     end
