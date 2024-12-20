@@ -43,9 +43,9 @@ function MaticzplChipmaker.DrawCursorDisplay()
 	if (!r) then
 		return
 	end
-	
+
     local partsOnCursor = cMaker.GetAllPartsInPos(x,y)
-	
+
     if #partsOnCursor < 1 then
         return
     end
